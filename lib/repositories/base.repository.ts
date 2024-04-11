@@ -2,8 +2,10 @@ import {
   DeepPartial,
   FindManyOptions,
   FindOneOptions,
+  FindOptionsWhere,
   Repository,
 } from 'typeorm';
+import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 
 export class BaseAbstractRepository<T> {
   private entity: Repository<T>;
@@ -33,5 +35,12 @@ export class BaseAbstractRepository<T> {
 
   public async find(options: FindManyOptions): Promise<T[]> {
     return await this.entity.find(options);
+  }
+
+  public async update(
+    options: FindOptionsWhere<T>,
+    data: QueryDeepPartialEntity<T>,
+  ) {
+    return await this.entity.update(options, data);
   }
 }

@@ -1,13 +1,15 @@
 {
-  "name": "@devvn/dal",
+  "name": "@longhoangdevvn/dal",
   "version": "0.0.1",
-  "description": "",
+  "description": "<p align=\"center\">   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"200\" alt=\"Nest Logo\" /></a> </p>",
   "author": "",
-  "private": true,
   "license": "UNLICENSED",
+  "url": "https://github.com/nestjs/config#readme",
   "scripts": {
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write \"lib/**/*.ts\" \"test/**/*.ts\"",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -68,5 +70,19 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longhoangdevvn/b-dal.git"
+  },
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/longhoangdevvn/b-dal/issues"
+  },
+  "homepage": "https://github.com/longhoangdevvn/b-dal#readme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   }
 }
