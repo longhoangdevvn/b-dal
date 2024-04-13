@@ -12,4 +12,7 @@ export class UserEntity extends BaseEntity {
 
   @Column('varchar', { nullable: false })
   password: string;
+
+  @Column('varchar', { nullable: true })
+  avatar: string;
 }

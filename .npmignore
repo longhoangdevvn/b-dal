@@ -9,3 +9,4 @@ tsconfig.json
 .commitlintrc.json
 .eslintignore
 .eslintrc.js
+coverage

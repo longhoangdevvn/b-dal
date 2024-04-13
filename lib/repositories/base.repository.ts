@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 
-export class BaseAbstractRepository<T> {
+export class BaseRepository<T> {
   private entity: Repository<T>;
   protected constructor(entity: Repository<T>) {
     this.entity = entity;
@@ -42,5 +42,17 @@ export class BaseAbstractRepository<T> {
     data: QueryDeepPartialEntity<T>,
   ) {
     return await this.entity.update(options, data);
+  }
+
+  public async softDelete(options: FindOptionsWhere<T>) {
+    return await this.entity.softDelete(options);
+  }
+
+  public async restore(options: FindOptionsWhere<T>) {
+    return await this.entity.restore(options);
+  }
+
+  public async delete(options: FindOptionsWhere<T>) {
+    return await this.entity.delete(options);
   }
 }
