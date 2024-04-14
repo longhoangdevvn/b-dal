@@ -1,8 +1,8 @@
 // Models
-export * from './models/user/user.model';
+export * from './models/index';
 
 // Repositories
-export * from './repositories/user/user.repository';
+export * from './repositories/index';
 
 // Entities
-export * from './entities/user/user.entity';
+export * from './entities/index';

@@ -1,6 +1,6 @@
 # source
 lib
-tests
+test
 index.ts
 package-lock.json
 tslint.json
