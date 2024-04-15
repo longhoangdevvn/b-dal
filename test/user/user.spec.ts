@@ -33,7 +33,6 @@ describe('UserEntity', () => {
       email: 'test@test.com',
       fullName: 'Test User',
       password: 'password',
-      avatar: null,
     });
     createdUser = await userRepository.save(user);
     expect(createdUser).toHaveProperty('id');
