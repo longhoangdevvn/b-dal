@@ -57,4 +57,8 @@ describe('PermissionGroupEntity', () => {
     });
     expect(foundPermissionGroup).toBeNull();
   });
+
+  afterAll(async () => {
+    await permissionGroupRepository.delete({});
+  })
 });

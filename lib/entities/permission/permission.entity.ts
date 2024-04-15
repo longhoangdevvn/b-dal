@@ -12,7 +12,7 @@ export class PermissionEntity extends BaseEntity {
   name: string;
 
   @Column('varchar', { nullable: true, name: 'group_id' })
-  groupId: string;
+  groupId: number;
 
   @ManyToOne(
     () => PermissionGroupEntity,
