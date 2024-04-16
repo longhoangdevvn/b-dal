@@ -1,27 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from '../../lib/entities/user/user.entity';
 import { UserRepository } from '../../lib/repositories/user/user.repository';
+import databaseTestConfig from "../test-database.config";
 
 describe('UserEntity', () => {
   let userRepository: UserRepository;
 
   beforeAll(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        TypeOrmModule.forRoot({
-          type: 'postgres',
-          host: 'localhost',
-          port: 5432,
-          username: 'root',
-          password: 'secret',
-          database: 'b-test',
-          entities: [UserEntity],
-          synchronize: false,
-        }),
-        TypeOrmModule.forFeature([UserEntity]),
-      ],
-    }).compile();
+    const module: TestingModule = await Test.createTestingModule(databaseTestConfig).compile();
 
     userRepository = module.get<UserRepository>('UserEntityRepository');
   });

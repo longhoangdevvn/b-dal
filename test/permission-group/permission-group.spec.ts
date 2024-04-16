@@ -1,7 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity } from "../../lib/entities";
 import { PermissionGroupRepository } from "../../lib/repositories";
-import { TypeOrmModule } from "@nestjs/typeorm";
 import databaseTestConfig from "../test-database.config";
 describe('PermissionGroupEntity', () => {
   let permissionGroupRepository: PermissionGroupRepository;

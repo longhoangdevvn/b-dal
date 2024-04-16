@@ -1,5 +1,19 @@
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity } from "../lib/entities";
+import { 
+  PermissionGroupEntity,
+  PermissionEntity,
+  RolesPermissionsEntity,
+  RoleEntity,
+  UserEntity,
+} from "../lib/entities";
+
+const entities = [
+  PermissionGroupEntity,
+  PermissionEntity,
+  RolesPermissionsEntity,
+  RoleEntity,
+  UserEntity
+];
 
 export default {
   imports: [
@@ -10,9 +24,9 @@ export default {
       username: 'root',
       password: 'secret',
       database: 'b-test',
-      entities: [PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity],
+      entities,
       synchronize: false,
     }),
-    TypeOrmModule.forFeature([PermissionGroupEntity, PermissionEntity]),
+    TypeOrmModule.forFeature(entities),
   ],
 }

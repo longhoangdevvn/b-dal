@@ -1,7 +1,7 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity } from "../../lib/entities";
 import { PermissionGroupRepository, PermissionRepository } from "../../lib/repositories";
-import { TypeOrmModule } from "@nestjs/typeorm";
+import databaseTestConfig from "../test-database.config";
 
 const permissionGroupData = {
   name: 'Test Permission Group',
@@ -17,21 +17,7 @@ describe('PermissionEntity', () => {
   let permissionRepository: PermissionRepository;
   let permissionGroupRepository: PermissionGroupRepository;
   beforeAll(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        TypeOrmModule.forRoot({
-          type: 'postgres',
-          host: 'localhost',
-          port: 5432,
-          username: 'root',
-          password: 'secret',
-          database: 'b-test',
-          entities: [PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity],
-          synchronize: false,
-        }),
-        TypeOrmModule.forFeature([PermissionEntity, PermissionGroupEntity]),
-      ],
-    }).compile();
+    const module: TestingModule = await Test.createTestingModule(databaseTestConfig).compile();
 
     permissionRepository = module.get<PermissionRepository>('PermissionEntityRepository');
     permissionGroupRepository = module.get<PermissionGroupRepository>('PermissionGroupEntityRepository');
