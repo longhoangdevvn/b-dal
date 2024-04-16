@@ -2,26 +2,12 @@ import { Test, TestingModule } from "@nestjs/testing";
 import { PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity } from "../../lib/entities";
 import { PermissionGroupRepository } from "../../lib/repositories";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import databaseTestConfig from "../test-database.config";
 describe('PermissionGroupEntity', () => {
   let permissionGroupRepository: PermissionGroupRepository;
 
   beforeAll(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        TypeOrmModule.forRoot({
-          type: 'postgres',
-          host: 'localhost',
-          port: 5432,
-          username: 'root',
-          password: 'secret',
-          database: 'b-test',
-          entities: [PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity],
-          synchronize: false,
-        }),
-        TypeOrmModule.forFeature([PermissionGroupEntity, PermissionEntity]),
-      ],
-    }).compile();
-
+    const module: TestingModule = await Test.createTestingModule(databaseTestConfig).compile();
     permissionGroupRepository = module.get<PermissionGroupRepository>('PermissionGroupEntityRepository');
   })
 
@@ -59,6 +45,6 @@ describe('PermissionGroupEntity', () => {
   });
 
   afterAll(async () => {
-    await permissionGroupRepository.delete({});
+    // await permissionGroupRepository.delete({});
   })
 });
