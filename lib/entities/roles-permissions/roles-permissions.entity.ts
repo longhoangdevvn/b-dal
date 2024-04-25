@@ -5,10 +5,10 @@ import { PermissionEntity } from '../permission/permission.entity';
 
 @Entity('roles_permissions')
 export class RolesPermissionsEntity extends BaseEntity {
-  @Column('varchar', { nullable: false, name: 'role_id' })
+  @Column('number', { nullable: false, name: 'role_id' })
   roleId: number;
 
-  @Column('varchar', { nullable: false, name: 'permission_id' })
+  @Column('number', { nullable: false, name: 'permission_id' })
   permissionId: number;
 
   @ManyToOne(() => RoleEntity, (role) => role.rolesPermissions, {

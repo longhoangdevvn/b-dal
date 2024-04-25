@@ -6,7 +6,8 @@ import {
   RoleEntity,
   UserEntity,
   TeamEntity,
-  StoreEntity
+  StoreEntity,
+  AppEntity
 } from "../lib/entities";
 
 const entities = [
@@ -16,7 +17,8 @@ const entities = [
   RoleEntity,
   UserEntity,
   TeamEntity,
-  StoreEntity
+  StoreEntity,
+  AppEntity
 ];
 
 export default {

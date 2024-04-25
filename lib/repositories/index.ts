@@ -5,3 +5,4 @@ export * from './permission-group/permission-group.repository';
 export * from './roles-permissions/roles-permissions.repository';
 export * from './team/team.repository';
 export * from './store/store.repository';
+export * from './app/app.repository';

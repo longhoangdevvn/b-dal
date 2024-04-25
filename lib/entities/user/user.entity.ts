@@ -1,9 +1,8 @@
-import { Column, Entity, Index } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 import { BaseEntity } from '../base.entity';
 
 @Entity('users')
 export class UserEntity extends BaseEntity {
-  @Index({ unique: true })
   @Column('varchar', { unique: true, nullable: false })
   email: string;
 
