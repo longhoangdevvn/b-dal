@@ -5,7 +5,8 @@ import {
   RolesPermissionsEntity,
   RoleEntity,
   UserEntity,
-  TeamEntity
+  TeamEntity,
+  StoreEntity
 } from "../lib/entities";
 
 const entities = [
@@ -14,7 +15,8 @@ const entities = [
   RolesPermissionsEntity,
   RoleEntity,
   UserEntity,
-  TeamEntity
+  TeamEntity,
+  StoreEntity
 ];
 
 export default {

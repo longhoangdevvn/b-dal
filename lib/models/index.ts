@@ -9,3 +9,5 @@ export * from './role/role.model';
 export * from './roles-permissions/roles-permissions.model';
 
 export * from './team/team.model';
+
+export * from './store/store.model';

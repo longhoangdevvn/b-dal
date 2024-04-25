@@ -9,3 +9,5 @@ export * from './role/role.entity';
 export * from './roles-permissions/roles-permissions.entity';
 
 export * from './team/team.entity';
+
+export * from './store/store.entity';
