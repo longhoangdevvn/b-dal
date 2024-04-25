@@ -1,5 +1,5 @@
 import { Test, TestingModule } from "@nestjs/testing";
-import { PermissionGroupEntity, PermissionEntity, RolesPermissionsEntity, RoleEntity } from "../../lib/entities";
+import { PermissionGroupEntity } from "../../lib/entities";
 import { PermissionGroupRepository } from "../../lib/repositories";
 import databaseTestConfig from "../test-database.config";
 describe('PermissionGroupEntity', () => {
@@ -20,6 +20,18 @@ describe('PermissionGroupEntity', () => {
     });
     createdPermissionGroup = await permissionGroupRepository.save(permissionGroup);
     expect(createdPermissionGroup).toHaveProperty('id');
+  });
+
+  // Find a permission group
+  it('should find a permission group', async () => {
+    // Assuming `createdPermissionGroup` is the permission group created in the previous test
+    const foundPermissionGroup = await permissionGroupRepository.findOne({
+      where: {
+        id: createdPermissionGroup.id,
+        deletedAt: null,
+      },
+    });
+    expect(foundPermissionGroup.id).toBe(createdPermissionGroup.id);
   });
 
   it('should update a permission group', async () => {

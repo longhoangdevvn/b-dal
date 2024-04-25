@@ -34,4 +34,36 @@ describe('PermissionEntity', () => {
     });
     expect(createPermission).toHaveProperty('id');
   });
+
+  // Find a permission
+  it('should find a permission', async () => {
+    const foundPermission = await permissionRepository.findOne({
+      where: {
+        id: createPermission.id,
+        deletedAt: null,
+      },
+    });
+    expect(foundPermission.id).toBe(createPermission.id);
+  });
+
+  // Update a permission
+  it('should update a permission', async () => {
+    createPermission.name = 'Updated Permission';
+    const updatedPermission = await permissionRepository.save(createPermission);
+    expect(updatedPermission.name).toBe('Updated Permission');
+  });
+
+  // Soft delete a permission
+  it('should soft delete a permission', async () => {
+    await permissionRepository.softDelete({
+      id: createPermission.id,
+    });
+    const foundPermission = await permissionRepository.findOne({
+      where: {
+        id: createPermission.id,
+        deletedAt: null,
+      },
+    });
+    expect(foundPermission).toBeNull();
+  });
 });
