@@ -1,6 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import {  RoleEntity } from "../../lib/entities";
-import { PermissionRepository, RoleRepository } from "../../lib/repositories";
+import { RoleRepository } from "../../lib/repositories";
 import databaseTestConfig from "../test-database.config";
 
 describe('RoleEntity', () => {
