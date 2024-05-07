@@ -7,3 +7,4 @@ export * from './team/team.model';
 export * from './store/store.model';
 export * from './app/app.model';
 export * from './currency-rate/currency-rate.model';
+export * from './teams-roles/teams-roles.model';

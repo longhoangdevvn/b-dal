@@ -7,3 +7,4 @@ export * from './team/team.entity';
 export * from './store/store.entity';
 export * from './app/app.entity';
 export * from './currency-rate/currency-rate.entity';
+export * from './teams-roles/teams-roles.entity';
