@@ -6,3 +6,4 @@ export * from './roles-permissions/roles-permissions.repository';
 export * from './team/team.repository';
 export * from './store/store.repository';
 export * from './app/app.repository';
+export * from './currency-rate/currency-rate.repository';

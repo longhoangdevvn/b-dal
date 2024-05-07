@@ -6,3 +6,4 @@ export * from './roles-permissions/roles-permissions.model';
 export * from './team/team.model';
 export * from './store/store.model';
 export * from './app/app.model';
+export * from './currency-rate/currency-rate.model';

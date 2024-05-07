@@ -7,7 +7,8 @@ import {
   UserEntity,
   TeamEntity,
   StoreEntity,
-  AppEntity
+  AppEntity,
+  CurrencyRateEntity,
 } from "../lib/entities";
 
 const entities = [
@@ -18,7 +19,8 @@ const entities = [
   UserEntity,
   TeamEntity,
   StoreEntity,
-  AppEntity
+  AppEntity,
+  CurrencyRateEntity
 ];
 
 export default {
