@@ -12,6 +12,6 @@ export class CurrencyRateEntity extends BaseEntity {
   @Column('float', { nullable: false })
   rate: number;
 
-  @Column('datetime', { nullable: false, name: 'apply_time' })
+  @Column('timestamp', { nullable: false, name: 'apply_time' })
   applyTime: Date;
 }
