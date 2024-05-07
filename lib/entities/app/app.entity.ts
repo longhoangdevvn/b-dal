@@ -1,6 +1,7 @@
-import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
 import { BaseEntity } from '../base.entity';
 import { StoreEntity } from '../store/store.entity';
+import { TeamsAppsEntity } from '../teams-apps/teams-apps.entity';
 
 @Entity('apps')
 export class AppEntity extends BaseEntity {
@@ -19,4 +20,7 @@ export class AppEntity extends BaseEntity {
   @ManyToOne(() => StoreEntity, (store) => store.apps, { nullable: false })
   @JoinColumn({ name: 'store_id' })
   store: StoreEntity;
+
+  @OneToMany(() => TeamsAppsEntity, (teamsApps) => teamsApps.app)
+  teamsApps: TeamsAppsEntity[];
 }
