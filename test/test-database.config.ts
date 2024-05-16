@@ -9,7 +9,8 @@ import {
   StoreEntity,
   AppEntity,
   CurrencyRateEntity,
-  TeamsRolesEntity
+  TeamsRolesEntity,
+  TeamsAppsEntity
 } from "../lib/entities";
 
 const entities = [
@@ -22,7 +23,8 @@ const entities = [
   StoreEntity,
   AppEntity,
   CurrencyRateEntity,
-  TeamsRolesEntity
+  TeamsRolesEntity,
+  TeamsAppsEntity
 ];
 
 export default {
