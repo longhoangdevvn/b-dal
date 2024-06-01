@@ -11,6 +11,9 @@ export class RolesPermissionsEntity extends BaseEntity {
   @Column('number', { nullable: false, name: 'permission_id' })
   permissionId: number;
 
+  @Column('boolean', { nullable: false, default: false })
+  status: boolean;
+
   @ManyToOne(() => RoleEntity, (role) => role.rolesPermissions, {
     nullable: false,
   })
